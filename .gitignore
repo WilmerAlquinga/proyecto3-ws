@@ -2,5 +2,5 @@
 /node_modules
 
 # misc
-# .env.prod
-# .env.local
+.env.prod
+.env.local
