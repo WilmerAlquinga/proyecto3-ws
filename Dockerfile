@@ -1,20 +1,20 @@
-# Define la imagen base
+# Define base image
 FROM node:14
 
-# Copia los archivos de la aplicación al contenedor
+# Copy all files of aplication to the container
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
 
-# Establece la variable de entorno NODE_ENV a prod
+# Set NODE_ENV to prod
 ENV NODE_ENV=prod
 
-# Copia el archivo .env.prod
+# Copy file .env.prod
 COPY .env.prod .env
 
-# Expone el puerto 3000
+# Expose app on port 3000
 EXPOSE 3000
 
-# Define el comando de inicio
+# Define comand to start app
 CMD ["npm", "start"]
