@@ -7,6 +7,12 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 
+# Establece la variable de entorno NODE_ENV a prod
+ENV NODE_ENV=prod
+
+# Copia el archivo .env.prod
+COPY .env.prod .env
+
 # Expone el puerto 3000
 EXPOSE 3000
 
