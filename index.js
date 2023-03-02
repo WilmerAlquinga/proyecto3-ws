@@ -21,8 +21,12 @@ const connection = require('./db/connection');
 
 app.use(bodyParser.json());
 app.use(cors({
-  origin: ["*", "http://localhost:4200"]
+  origin: '*'
 }));
+// app.use(cors());
+// app.use(cors({
+//   origin: ["*", "http://localhost:4200"]
+// }));
 
 app.get('/products', (req, res) => {
   connection.query('SELECT * FROM product', (error, results) => {
